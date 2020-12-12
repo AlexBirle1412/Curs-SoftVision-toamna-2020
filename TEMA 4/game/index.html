@@ -2,24 +2,18 @@
     <head>
         <link rel="stylesheet" href="css/style.css">
         <script src="/socket.io/socket.io.js" type="module"></script>
-        <script src="js/main.js" type="module"></script>
-        <script src="./" type="module"></script>
+        <script src="/js/main.js" type="module"></script>
         
     </head>
 
     <body>
         <!-- IMAGES -->
-        <img src="assets/map.png" class="display-none" id="map-image">
-        <img src="assets/space-ranger-player.png" class="display-none" id="space-ranger"/>
-        <img src="assets/pink-lady-player.png" class="display-none" id="pink-lady"/>
+        <img src="/assets/map.png" class="display-none" id="map-image">
+        <img src="/assets/space-ranger-player.png" class="display-none" id="space-ranger"/>
+        <img src="/assets/pink-lady-player.png" class="display-none" id="pink-lady"/>
 
         <!-- MENU -->
         <div id="menu">
-            <!-- <div id="join-chat">
-                <input type="text" id="user-name-input" placeholder="Enter your name"/>
-                <button id="join-chat-button">Join Chat</button>
-                <p id="user-name-missing" class="display-none">Please enter user name to join chat!</p>
-            </div> -->
             <div id="create-game-container">
                 <input id="game-name-input" type="text" placeholder="Enter the game name" />
                 <button id="create-game-button">Create Game!</button>

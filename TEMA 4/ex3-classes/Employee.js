@@ -11,22 +11,19 @@ class Employee extends Person {
   }
 
   canManageOtherPeople(flag) {
-    if (flag) return true;
-    return false;
+    return flag;
   }
 
   canDig(muscle) {
-    if (muscle) return true;
-    return false;
+    return muscle;
   }
   isAGenius() {
-    if (this.favouriteSongs.length >= 3) return true;
-    return false;
+    return this.favouriteSongs.length >= 3;
   }
 }
 
-let p = new Person({ name: "Jack", age: 33 });
-let e = new Employee({ name: "Zack", age: 22 }, 300);
+const p = new Person({ name: "Jack", age: 33 });
+const e = new Employee({ name: "Zack", age: 22 }, 300);
 console.log(p.canWalk());
 console.log(p.loveSport());
 console.log(e.canManageOtherPeople(true));

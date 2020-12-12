@@ -29,25 +29,6 @@ io.on("connection", function (socket) {
     }
   });
 
-  // socket.on("join-chat", function (userName) {
-  //   console.log("[USER JOINED CHAT]", socket.id, userName);
-  //   chatUsers[socket.id] = userName;
-  //   socket.join("chat");
-  //   socket.emit("joined-chat");
-  // });
-
-  // socket.on("send-message", function (message) {
-  //   console.log("[USER SENT MESSAGE]", message);
-  //   io.to("chat").emit("new-message", `${chatUsers[socket.id]}: ${message}`);
-  // });
-
-  // socket.on("leave-chat", function () {
-  //   console.log("[USER LEFT CHAT]", socket.id);
-  //   delete chatUsers[socket.id];
-  //   socket.leave("chat");
-  //   socket.emit("menu");
-  // });
-
   socket.on("create-game", function (gameName) {
     console.log("[NEW GAME CREATED]");
     const gameId = "game-" + socket.id;
