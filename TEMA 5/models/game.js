@@ -8,7 +8,7 @@ class Game {
     this.name = options.name;
     this.diamonds = [];
     this.bullets = [];
-    this.totalDiamonds = 500;
+    this.totalDiamonds = 3;
     this.over = false;
     this.start();
   }

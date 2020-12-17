@@ -76,7 +76,6 @@ io.on("connection", function (socket) {
         return;
       }
       players[socket.id].startMoving(direction);
-      // console.log('[MOVE PLAYER]', direction)
     }
   });
 
@@ -86,7 +85,6 @@ io.on("connection", function (socket) {
         return;
       }
       players[socket.id].stopMoving(axis);
-      // console.log('[STOP PLAYER]', axis)
     }
   });
 
@@ -122,11 +120,11 @@ io.on("connection", function (socket) {
   });
 
   socket.on("attack", function () {
+    const game = games[players[socket.id].gameId];
     if (players[socket.id]) {
-      if (games[players[socket.id].gameId].players.length != 2) {
+      if (game.players.length != 2) {
         return;
       }
-      const game = games[players[socket.id].gameId];
       if (game.bullets.length == 0)
         game.bullets.push(new Bullet(players[socket.id]));
     }

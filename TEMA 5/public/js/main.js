@@ -90,18 +90,20 @@ socket.on("game-loop", function (data) {
       .getElementById("waiting-for-players")
       .classList.add("display-none");
     document.getElementById("score-container").classList.remove("display-none");
+    document
+      .getElementById("diamonds-remained")
+      .classList.remove("display-none");
     document.getElementById("space-ranger-score").innerHTML =
       data.score["space-ranger"];
     document.getElementById("pink-lady-score").innerHTML =
       data.score["pink-lady"];
-    document
-      .getElementById("diamonds-remained")
-      .classList.remove("display-none");
-    document.getElementById("diamonds-remained").innerHTML = Number(
+    let diamondsRemained =
       data.score["total-diamonds"] -
-        data.score["space-ranger"] -
-        data.score["pink-lady"]
-    );
+      data.score["space-ranger"] -
+      data.score["pink-lady"];
+    if (diamondsRemained > -1) {
+      document.getElementById("diamonds-remained").innerHTML = diamondsRemained;
+    }
   } else {
     document
       .getElementById("waiting-for-players")
